@@ -1,6 +1,6 @@
 import React from "react";
 
-const RootFooterComp = () => {
+const RootFooter = () => {
   return (
     <footer className="footer sm:footer-horizontal bg-secondary text-base-content p-10">
       <nav>
@@ -59,4 +59,4 @@ const RootFooterComp = () => {
   );
 };
 
-export default RootFooterComp;
+export default RootFooter;

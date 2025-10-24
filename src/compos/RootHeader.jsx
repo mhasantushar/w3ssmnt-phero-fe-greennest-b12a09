@@ -1,11 +1,11 @@
 import React from "react";
 import logoApp from "../assets/logo.png";
 import "../../src/index.css";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { RiHome9Fill, RiPlantFill } from "react-icons/ri";
 import { FaUserGear } from "react-icons/fa6";
 
-const RootHeaderComp = () => {
+const RootHeader = () => {
   const rootMenuItems = (
     <>
       <li>
@@ -69,11 +69,11 @@ const RootHeaderComp = () => {
           </ul>
         </nav>
         <nav className="navbar-end">
-          <a className="btn px-8">Sign In</a>
+          <Link to={'/auth/signin'} className="btn px-8">Sign In</Link>
         </nav>
       </div>
     </div>
   );
 };
 
-export default RootHeaderComp;
+export default RootHeader;
