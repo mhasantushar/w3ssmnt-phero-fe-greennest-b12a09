@@ -6,6 +6,7 @@ import PlantDetails from "../pages/PlantDetails";
 import AuthLayout from "../layouts/AuthLayout";
 import AuthRegister from "../pages/AuthRegister";
 import AuthSignIn from "../pages/AuthSignIn";
+import PrivateRouter from "./PrivateRouter";
 
 const DefaultRouter = createBrowserRouter([
   {
@@ -36,7 +37,11 @@ const DefaultRouter = createBrowserRouter([
       },
       {
         path: "/auth/profile",
-        element: <AuthProfile />,
+        element: (
+          <PrivateRouter>
+            <AuthProfile />
+          </PrivateRouter>
+        ),
       },
     ],
   },
