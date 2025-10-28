@@ -11,6 +11,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateEmail,
   updateProfile,
 } from "firebase/auth";
 
@@ -38,9 +39,13 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  const doSignInWithEmailAndPassword = (vMail, vPass) => {
+  const doUpdateEmail = (email) => {
+    return updateEmail(fbaseAuth.currentUser, email);
+  };
+
+  const doSignInWithEmailAndPassword = (email, password) => {
     setPageIsLoading(true);
-    return signInWithEmailAndPassword(fbaseAuth, vMail, vPass);
+    return signInWithEmailAndPassword(fbaseAuth, email, password);
   };
 
   const doSignInGoogleWithPopup = () => {
@@ -70,6 +75,7 @@ const AuthProvider = ({ children }) => {
     doCreateUserWithEmailAndPassword,
     doSendEmailVerification,
     doUpdateProfile,
+    doUpdateEmail,
     doSignOut,
 
     doSignInWithEmailAndPassword,

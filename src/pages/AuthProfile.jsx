@@ -43,6 +43,8 @@ const AuthProfile = () => {
       .catch((err) => {
         toast.err(`Updating profile failed! ${err.message}`);
       });
+
+      
   };
 
   const handleUserResetPassword = () => {
@@ -108,12 +110,6 @@ const AuthProfile = () => {
                 Forgot Password?
               </button>
 
-              <p className="mt-3 text-sm text-center">
-                Change Email?{" "}
-                <Link to="/auth/emailupd" className="text-secondary font-semibold">
-                  Click Here
-                </Link>
-              </p>
             </fieldset>
           </form>
         </div>
