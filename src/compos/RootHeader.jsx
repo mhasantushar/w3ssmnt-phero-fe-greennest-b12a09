@@ -1,11 +1,33 @@
-import React from "react";
-import logoApp from "../assets/logo.png";
-import "../../src/index.css";
-import { Link, NavLink } from "react-router";
+import React, { useContext } from "react";
+import { Link, NavLink, useNavigate } from "react-router";
 import { RiHome9Fill, RiPlantFill } from "react-icons/ri";
 import { FaUserGear } from "react-icons/fa6";
+import { MoonLoader } from "react-spinners";
+import { toast } from "react-toastify";
+import "../../src/index.css";
+import AuthContext from "../providers/AuthContext";
+import logoApp from "../assets/logo.png";
 
 const RootHeader = () => {
+  const navigate = useNavigate();
+  const { loggedInUser, setLoggedInUser, doSignOut, pageIsLoading } =
+    useContext(AuthContext);
+  // console.log(loggedInUser);
+
+  const handleUserSignOut = () => {
+    doSignOut()
+      .then(() => {
+        toast.success("User signed off.");
+        setLoggedInUser(null);
+        navigate("/auth/signin");
+      })
+      .catch((error) => {
+        toast.error(
+          `Sign out attempt failed! ${error.code} - ${error.message}.`
+        );
+      });
+  };
+
   const rootMenuItems = (
     <>
       <li>
@@ -59,8 +81,12 @@ const RootHeader = () => {
             </ul>
           </div>
           <div className="flex gap-0 justify-start items-center">
-            <img className="h-12" src={logoApp} alt="App Logo" />
-            <a className="btn btn-link text-3xl text-secondary">greenest</a>
+            <Link to="/">
+              <img className="h-12" src={logoApp} alt="App Logo" />
+            </Link>
+            <Link to="/" className="btn btn-link text-3xl text-secondary">
+              greenest
+            </Link>
           </div>
         </nav>
         <nav className="navbar-center hidden lg:flex">
@@ -68,8 +94,53 @@ const RootHeader = () => {
             {rootMenuItems}
           </ul>
         </nav>
+
         <nav className="navbar-end">
-          <Link to={'/auth/signin'} className="btn px-8">Sign In</Link>
+          {/* {console.log (loggedInUser)} */}
+          {pageIsLoading ? (
+            <MoonLoader color="#ABD373" size={36} />
+          ) : loggedInUser ? (
+            <div className="space-y-3 text-center">
+              <div className="dropdown dropdown-hover dropdown-end">
+                <div tabIndex={0} role="button" className="m-1 btn btn-link">
+                  <img
+                    src={
+                      loggedInUser?.photoURL ||
+                      "https://i.ibb.co/1GsJNNFs/App-Error.png"
+                    }
+                    className="mx-auto rounded-full w-12 h-12"
+                    alt="User's Photo"
+                  />
+                </div>
+                <div
+                  tabIndex="-1"
+                  className="z-1 bg-base-100 shadow-md p-2 rounded-box w-52 dropdown-content menu"
+                >
+                  <h2 className="font-semibold text-xl">
+                    {loggedInUser?.displayName || "Display name not found"}
+                  </h2>
+                  <p className="mb-4">{loggedInUser?.email}</p>
+
+                  <button
+                    onClick={handleUserSignOut}
+                    className="btn btn-soft btn-error"
+                  >
+                    Sign Out
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div>
+              <button className="btn btn-soft">
+                <Link to={"/auth/signin"}>Sign in</Link>
+              </button>
+              {` `}
+              <button className="btn btn-soft">
+                <Link to={"/auth/register"}>Register</Link>
+              </button>
+            </div>
+          )}
         </nav>
       </div>
     </div>

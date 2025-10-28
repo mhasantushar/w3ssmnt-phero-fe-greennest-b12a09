@@ -1,6 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
 import { Link, useLocation, useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import AuthContext from "../providers/AuthContext";
 
 const AuthSignIn = () => {
   // state var for password's visibility mgmt
@@ -13,8 +15,90 @@ const AuthSignIn = () => {
   // console.log(intendedLocation);
   const navigate = useNavigate();
 
+  const {
+    setLoggedInUser,
+    doSignInWithEmailAndPassword,
+    doSignInGoogleWithPopup,
+    doSendPasswordResetEmail,
+    setPageIsLoading,
+  } = useContext(AuthContext);
+
   // this is to catch email field's value to use in 'Forgot Password' module
   const refEmailInputField = useRef(null);
+
+  const handleEmailSignIn = (e) => {
+    e.preventDefault();
+
+    const vMail = e.target.fmail?.value || "";
+    const vPass = e.target.fpass?.value || "";
+    // console.log({ vMail, vPass });
+
+    doSignInWithEmailAndPassword(vMail, vPass)
+      .then((userCredential) => {
+        // e.target.reset();
+        // console.log(userCredential);
+        const user = userCredential.user;
+        // console.log(user);
+
+        toast.success(`User ${user.email} logged in successfully.`);
+        setLoggedInUser(user);
+        e.target.reset();
+
+        // console.log(intendedLocation);
+        navigate(intendedLocation);
+      })
+
+      .catch((error) => {
+        toast.error(`Login attempt failed! ${error.message}.`);
+      });
+    setPageIsLoading(false);
+  };
+
+  const handleGoogleSignin = (e) => {
+    e.preventDefault();
+
+    doSignInGoogleWithPopup()
+      .then((result) => {
+        // console.log(result);
+
+        // This gives a Google Access Token - used to access the Google API.
+        // const credential = GoogleAuthProvider.credentialFromResult(result);
+        // const token = credential.accessToken;
+
+        // The signed-in user info.
+        const user = result.user;
+        // IdP data available using getAdditionalUserInfo(result)
+
+        toast.success(`User ${user.email} logged in successfully.`);
+        setLoggedInUser(user);
+        navigate(intendedLocation);
+      })
+      .catch((error) => {
+        // The email of the user's account used.
+        const email = error.customData.email;
+
+        // The AuthCredential type that was used.
+        // const credential = GoogleAuthProvider.credentialFromError(error);
+        toast.error(`Login with ${email} failed - ${error.message}.`);
+      });
+    setPageIsLoading(false);
+  };
+
+  const handleUserResetPassword = () => {
+    // console.log(emailFieldInput); // to get email value using controlled comnent
+    // console.log(refEmailInputField); // alternet approach to get the email field's value
+    const email = refEmailInputField.current.value;
+
+    doSendPasswordResetEmail(email)
+      .then(() => {
+        toast.success(`Password reset email sent to ${email}.`);
+      })
+      .catch((err) => {
+        toast.error(
+          `Error sending password rest email! ${err.code} - ${err.message}`
+        );
+      });
+  };
 
   return (
     <div className="hero bg-base-200 min-h-screen rounded-xl p-24">
@@ -29,7 +113,7 @@ const AuthSignIn = () => {
         </div>
 
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-          <form className="card-body">
+          <form onSubmit={handleEmailSignIn} className="card-body">
             <fieldset className="fieldset">
               <label className="label">Email</label>
               <input
@@ -37,7 +121,7 @@ const AuthSignIn = () => {
                 className="input"
                 placeholder="Email"
                 name="fmail"
-                restricted
+                required
                 ref={refEmailInputField}
               />
 
@@ -48,7 +132,7 @@ const AuthSignIn = () => {
                   className="input"
                   placeholder="Password"
                   name="fpass"
-                  restricted
+                  required
                 />
                 <span
                   onClick={() => setPasswordVisible(!passwordVisible)}
@@ -60,7 +144,7 @@ const AuthSignIn = () => {
 
               <button
                 className="cursor-pointer hover:underline"
-                // onClick={handleUserResetPassword}
+                onClick={handleUserResetPassword}
                 type="button"
               >
                 Forgot Password?
@@ -70,9 +154,31 @@ const AuthSignIn = () => {
                 Sign In
               </button>
 
+              <div className="flex justify-center items-center gap-2 my-2">
+                <div className="bg-base-300 w-16 h-px"></div>
+                <span className="text-accent text-sm">or</span>
+                <div className="bg-base-300 w-16 h-px"></div>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleGoogleSignin}
+                className="btn btn-error"
+              >
+                <img
+                  src="https://www.svgrepo.com/show/475656/google-color.svg"
+                  alt="Google"
+                  className="w-5 h-5"
+                />
+                Continue with Google
+              </button>
+
               <p className="mt-3 text-sm text-center">
                 Don’t have an account?{" "}
-                <Link to="/auth/register" className="text-secondary font-semibold">
+                <Link
+                  to="/auth/register"
+                  className="text-secondary font-semibold"
+                >
                   Register One
                 </Link>
               </p>
