@@ -1,29 +1,30 @@
-import React, { useContext, useEffect, useRef } from "react";
-import { Link } from "react-router";
+import React, { useContext, useEffect, useRef} from "react";
 import AuthContext from "../providers/AuthContext";
 import { toast } from "react-toastify";
 
 const AuthProfile = () => {
-  const { loggedInUser, setLoggedInUser, doUpdateProfile, doSendPasswordResetEmail } =
-    useContext(AuthContext);
+  const {
+    loggedInUser,
+    setLoggedInUser,
+    doUpdateProfile,
+    doSendPasswordResetEmail,
+  } = useContext(AuthContext);
 
   const fnameRef = useRef(null);
   const fpurlRef = useRef(null);
+  const fmailRef = useRef(null);
 
   useEffect(() => {
     if (loggedInUser) {
+
       fnameRef.current.value = loggedInUser.displayName || "";
       fpurlRef.current.value = loggedInUser.photoURL || "";
+      fmailRef.current.value = loggedInUser.email || "";
     }
   }, [loggedInUser]);
 
   const handleUpdateProfile = (e) => {
     e.preventDefault();
-
-    if (!loggedInUser) {
-      toast.error("No logged in user found");
-      return;
-    }
 
     const vName = e.target.fname?.value || "";
     const vPhoto = e.target.fpurl?.value || "";
@@ -43,16 +44,14 @@ const AuthProfile = () => {
       .catch((err) => {
         toast.err(`Updating profile failed! ${err.message}`);
       });
-
-      
   };
 
   const handleUserResetPassword = () => {
     const email = loggedInUser.email;
     // console.log(email);
 
-    if (!email){
-      toast.error ('Failed to retrieve email address.');
+    if (!email) {
+      toast.error("Failed to retrieve email address.");
       return;
     }
 
@@ -62,7 +61,7 @@ const AuthProfile = () => {
       })
       .catch((err) => {
         toast.error(
-          `Error sending password rest email! ${err.code} - ${err.message}`
+          `Error sending password rest email! ${err.message}`
         );
       });
   };
@@ -98,6 +97,17 @@ const AuthProfile = () => {
                 ref={fpurlRef}
               />
 
+              <label className="label">Email</label>
+              <input
+                type="email"
+                className="input"
+                placeholder="Email"
+                name="fmail"
+                ref={fmailRef}
+                required
+                disabled
+              />
+
               <button type="submit" className="btn bg-secondary mt-4">
                 Update Profile
               </button>
@@ -109,7 +119,6 @@ const AuthProfile = () => {
               >
                 Forgot Password?
               </button>
-
             </fieldset>
           </form>
         </div>

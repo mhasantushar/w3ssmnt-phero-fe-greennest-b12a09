@@ -1,13 +1,19 @@
 import React, { useContext, useState } from "react";
 import AuthContext from "../providers/AuthContext";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 
 const AuthRegister = () => {
-  const navigate = useNavigate();
   // state var for password's visibility mgmt
   const [passwordVisible, setPasswordVisible] = useState(false);
+
+  // these vars will be used to redirect after login,
+  // when came here from a private route
+  const currentLocation = useLocation();
+  const intendedLocation = currentLocation.state || "/";
+  // console.log(intendedLocation);
+  const navigate = useNavigate();
 
   const {
     loggedInUser,
@@ -15,6 +21,8 @@ const AuthRegister = () => {
     doCreateUserWithEmailAndPassword,
     doUpdateProfile,
     doSignOut,
+    doSignInGoogleWithPopup,
+    setPageIsLoading
   } = useContext(AuthContext);
 
   const handleEmailAccountCreation = (e) => {
@@ -79,13 +87,44 @@ const AuthRegister = () => {
               setLoggedInUser(null);
             });
           });
-          // console.log(loggedInUser);
+        // console.log(loggedInUser);
       })
 
       .catch((error) => {
         toast.error(`User account wasn't created! ${error.message}`);
         setLoggedInUser(null);
       });
+  };
+
+  // Google Signin
+  const handleGoogleSignin = (e) => {
+    e.preventDefault();
+
+    doSignInGoogleWithPopup()
+      .then((result) => {
+        // console.log(result);
+
+        // This gives a Google Access Token - used to access the Google API.
+        // const credential = GoogleAuthProvider.credentialFromResult(result);
+        // const token = credential.accessToken;
+
+        // The signed-in user info.
+        const user = result.user;
+        // IdP data available using getAdditionalUserInfo(result)
+
+        toast.success(`User ${user.email} logged in successfully.`);
+        setLoggedInUser(user);
+        navigate(intendedLocation);
+      })
+      .catch((error) => {
+        // The email of the user's account used.
+        const email = error.customData.email;
+
+        // The AuthCredential type that was used.
+        // const credential = GoogleAuthProvider.credentialFromError(error);
+        toast.error(`Login with ${email} failed - ${error.message}.`);
+      });
+    setPageIsLoading(false);
   };
 
   return (
@@ -145,6 +184,25 @@ const AuthRegister = () => {
 
               <button type="submit" className="btn bg-secondary mt-4">
                 Register
+              </button>
+
+              <div className="flex justify-center items-center gap-2 my-2">
+                <div className="bg-base-300 w-16 h-px"></div>
+                <span className="text-accent text-sm">or</span>
+                <div className="bg-base-300 w-16 h-px"></div>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleGoogleSignin}
+                className="btn btn-error"
+              >
+                <img
+                  src="https://www.svgrepo.com/show/475656/google-color.svg"
+                  alt="Google"
+                  className="w-5 h-5"
+                />
+                Continue with Google
               </button>
 
               <p className="mt-3 text-sm text-center">

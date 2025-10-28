@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router";
 import { RiHome9Fill, RiPlantFill } from "react-icons/ri";
 import { FaUserGear } from "react-icons/fa6";
@@ -13,6 +13,12 @@ const RootHeader = () => {
   const { loggedInUser, setLoggedInUser, doSignOut, pageIsLoading } =
     useContext(AuthContext);
   // console.log(loggedInUser);
+
+  useEffect(()=>{
+    if (loggedInUser){
+      // console.log (loggedInUser.photoURL || '');
+    }
+  },[loggedInUser])
 
   const handleUserSignOut = () => {
     doSignOut()

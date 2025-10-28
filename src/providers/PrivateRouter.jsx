@@ -7,7 +7,7 @@ const PrivateRouter = ({ children }) => {
   const { loggedInUser, pageIsLoading } = useContext(AuthContext);
 
   const intendedLocation = useLocation();
-  console.log(intendedLocation);
+  // console.log(intendedLocation);
 
   if (pageIsLoading) {
     return <ShowLoadingHash />;

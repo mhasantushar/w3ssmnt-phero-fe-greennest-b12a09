@@ -40,7 +40,7 @@ const AuthSignIn = () => {
         const user = userCredential.user;
         // console.log(user);
 
-        toast.success(`User ${user.email} logged in successfully.`);
+        toast.success("User logged in successfully.");
         setLoggedInUser(user);
         e.target.reset();
 
@@ -48,8 +48,8 @@ const AuthSignIn = () => {
         navigate(intendedLocation);
       })
 
-      .catch((error) => {
-        toast.error(`Login attempt failed! ${error.message}.`);
+      .catch((err) => {
+        toast.error(`Login attempt failed! ${err.message}.`);
       });
     setPageIsLoading(false);
   };
@@ -69,17 +69,17 @@ const AuthSignIn = () => {
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
 
-        toast.success(`User ${user.email} logged in successfully.`);
+        toast.success("User logged in successfully.");
         setLoggedInUser(user);
         navigate(intendedLocation);
       })
-      .catch((error) => {
+      .catch((err) => {
         // The email of the user's account used.
-        const email = error.customData.email;
+        // const email = err.customData.email;
 
         // The AuthCredential type that was used.
-        // const credential = GoogleAuthProvider.credentialFromError(error);
-        toast.error(`Login with ${email} failed - ${error.message}.`);
+        // const credential = GoogleAuthProvider.credentialFromError(err);
+        toast.error("Login failed - ${err.message}.");
       });
     setPageIsLoading(false);
   };
@@ -91,11 +91,11 @@ const AuthSignIn = () => {
 
     doSendPasswordResetEmail(email)
       .then(() => {
-        toast.success(`Password reset email sent to ${email}.`);
+        toast.success("Password reset email sent.");
       })
       .catch((err) => {
         toast.error(
-          `Error sending password rest email! ${err.code} - ${err.message}`
+          `Error sending password rest email! ${err.message}`
         );
       });
   };

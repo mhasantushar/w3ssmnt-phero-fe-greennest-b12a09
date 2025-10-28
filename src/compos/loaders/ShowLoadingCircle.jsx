@@ -3,7 +3,7 @@ import { CircleLoader } from "react-spinners";
 
 const ShowLoadingCircle = () => {
   return (
-    <div className="min-h-dvh flex justify-center items-center">
+    <div className="min-h-[calc(100dvh-350px)] flex justify-center items-center">
       <CircleLoader size={64} color={"#403F3F"} />
     </div>
   );
