@@ -16,9 +16,10 @@ const BookConsaltation = () => {
       Need a Consultation?
       <input className="input" type="text" placeholder="Your Name" required />
       <input className="input" type="email" placeholder="Your Email" required />
+
       <select
-        defaultValue="Select a consultant"
         className="select text-accent/75"
+        defaultValue="Select a consultant"
         required
       >
         <option disabled={true}>Select a consultant</option>
