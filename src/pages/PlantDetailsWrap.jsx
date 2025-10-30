@@ -18,7 +18,7 @@ const PlantDetailsWrap = () => {
     );
     setSelectedPlant(plantDetails);
   }, [allPlantsData, plantId]);
-  console.log(selectedPlant);
+  // console.log(selectedPlant);
 
   return (
     <div>

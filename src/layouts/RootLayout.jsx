@@ -15,7 +15,7 @@ const RootLayout = () => {
       </header>
 
       <main className="w-11/12 mx-auto min-h-[calc(100dvh-381px)] grid grid-cols-12 my-12">
-        <aside className="col-span-2">
+        <aside className="col-span-2 sticky top-10 h-fit">
           <LPane />
         </aside>
 

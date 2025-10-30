@@ -15,6 +15,8 @@ const DefaultRouter = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    hydrateFallbackElement: <DotForDefaultRouter />,
+    
     children: [
       {
         index: true,
@@ -30,7 +32,7 @@ const DefaultRouter = createBrowserRouter([
   },
   {
     path: "/plants",
-    element: <PlantsRedirect/>,
+    element: <PlantsRedirect />,
   },
   {
     path: "/plant/:plantId",
@@ -71,4 +73,3 @@ const DefaultRouter = createBrowserRouter([
 ]);
 
 export default DefaultRouter;
-
