@@ -1,0 +1,252 @@
+[
+  {
+    "tipId": 1,
+    "tipCateg": "Watering",
+    "tipDesc": "Water your plants when the top inch of the soil feels dry to the touch."
+  },
+  {
+    "tipId": 2,
+    "tipCateg": "Watering",
+    "tipDesc": "Ensure your pots have proper drainage to prevent waterlogging and root rot."
+  },
+  {
+    "tipId": 3,
+    "tipCateg": "Watering",
+    "tipDesc": "Use room temperature water to avoid shocking your plants."
+  },
+  {
+    "tipId": 4,
+    "tipCateg": "Watering",
+    "tipDesc": "Water your plants early in the morning or late in the evening to reduce evaporation."
+  },
+  {
+    "tipId": 5,
+    "tipCateg": "Watering",
+    "tipDesc": "For plants that prefer high humidity, consider placing a humidity tray under them."
+  },
+  {
+    "tipId": 6,
+    "tipCateg": "Watering",
+    "tipDesc": "Don't let your plants sit in water for long periods to avoid root rot."
+  },
+  {
+    "tipId": 7,
+    "tipCateg": "Watering",
+    "tipDesc": "Avoid overwatering your plants; it’s better to underwater than overwater."
+  },
+  {
+    "tipId": 8,
+    "tipCateg": "Watering",
+    "tipDesc": "Check the moisture level in the soil using a moisture meter for more accurate watering."
+  },
+  {
+    "tipId": 9,
+    "tipCateg": "Watering",
+    "tipDesc": "Use a watering can with a long spout to reach the soil without wetting the leaves."
+  },
+  {
+    "tipId": 10,
+    "tipCateg": "Watering",
+    "tipDesc": "Allow the water to soak through the drainage holes for better root hydration."
+  },
+  {
+    "tipId": 11,
+    "tipCateg": "Sunlight",
+    "tipDesc": "Place your plants near bright, indirect sunlight for optimal growth."
+  },
+  {
+    "tipId": 12,
+    "tipCateg": "Sunlight",
+    "tipDesc": "Rotate your plants regularly to ensure all sides receive adequate sunlight."
+  },
+  {
+    "tipId": 13,
+    "tipCateg": "Sunlight",
+    "tipDesc": "If sunlight is limited, consider using grow lights to supplement the light your plants receive."
+  },
+  {
+    "tipId": 14,
+    "tipCateg": "Sunlight",
+    "tipDesc": "Some plants, like succulents, need direct sunlight for at least a few hours a day."
+  },
+  {
+    "tipId": 15,
+    "tipCateg": "Sunlight",
+    "tipDesc": "Avoid placing your plants in direct afternoon sunlight as it can scorch the leaves."
+  },
+  {
+    "tipId": 16,
+    "tipCateg": "Sunlight",
+    "tipDesc": "Check the light requirements of each plant species, as some prefer low light conditions."
+  },
+  {
+    "tipId": 17,
+    "tipCateg": "Sunlight",
+    "tipDesc": "If your plant is stretching towards the light, it might not be getting enough sunlight."
+  },
+  {
+    "tipId": 18,
+    "tipCateg": "Sunlight",
+    "tipDesc": "For optimal growth, place your plants close to windows, preferably south or west-facing."
+  },
+  {
+    "tipId": 19,
+    "tipCateg": "Sunlight",
+    "tipDesc": "If you notice yellowing leaves, it could be a sign of too much direct sunlight."
+  },
+  {
+    "tipId": 20,
+    "tipCateg": "Sunlight",
+    "tipDesc": "Some plants like ferns and snake plants thrive in low light conditions."
+  },
+  {
+    "tipId": 21,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "Fertilize your plants during the growing season (spring and summer) to promote healthy growth."
+  },
+  {
+    "tipId": 22,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "Dilute your fertilizer to half the recommended strength to avoid overfeeding your plants."
+  },
+  {
+    "tipId": 23,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "Use a balanced, water-soluble fertilizer for general plant care."
+  },
+  {
+    "tipId": 24,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "Stop fertilizing during the dormant period (fall and winter) when plant growth slows down."
+  },
+  {
+    "tipId": 25,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "Over-fertilizing can lead to nutrient burn, so it's important to follow the recommended application rates."
+  },
+  {
+    "tipId": 26,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "If your plant is showing slow growth, it may benefit from a nutrient boost."
+  },
+  {
+    "tipId": 27,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "Organic fertilizers like compost or worm castings are great for enriching the soil naturally."
+  },
+  {
+    "tipId": 28,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "Avoid fertilizing plants that are stressed, as this can make the situation worse."
+  },
+  {
+    "tipId": 29,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "Slow-release fertilizers are a good option for providing nutrients over a longer period."
+  },
+  {
+    "tipId": 30,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "Be mindful of the fertilizer’s NPK ratio, ensuring it matches the needs of your specific plant."
+  },
+  {
+    "tipId": 31,
+    "tipCateg": "Watering",
+    "tipDesc": "Water thoroughly, ensuring the water reaches the root zone for deep hydration."
+  },
+  {
+    "tipId": 32,
+    "tipCateg": "Watering",
+    "tipDesc": "Consider using rainwater or distilled water if your tap water is hard."
+  },
+  {
+    "tipId": 33,
+    "tipCateg": "Watering",
+    "tipDesc": "In warmer months, you may need to water more frequently as the soil dries out faster."
+  },
+  {
+    "tipId": 34,
+    "tipCateg": "Watering",
+    "tipDesc": "Check for root rot by gently removing the plant from the pot if the plant seems unhealthy after overwatering."
+  },
+  {
+    "tipId": 35,
+    "tipCateg": "Watering",
+    "tipDesc": "Plants with larger leaves, like Monstera, need more water compared to smaller-leafed plants."
+  },
+  {
+    "tipId": 36,
+    "tipCateg": "Sunlight",
+    "tipDesc": "Be mindful of seasonal changes, as daylight hours can affect how much sunlight your plants receive."
+  },
+  {
+    "tipId": 37,
+    "tipCateg": "Sunlight",
+    "tipDesc": "Consider using sheer curtains to diffuse direct sunlight and prevent heat damage to your plants."
+  },
+  {
+    "tipId": 38,
+    "tipCateg": "Sunlight",
+    "tipDesc": "Indoor plants such as spider plants and pothos thrive in bright, indirect light."
+  },
+  {
+    "tipId": 39,
+    "tipCateg": "Sunlight",
+    "tipDesc": "If your plant is receiving insufficient light, it may become leggy with longer gaps between leaves."
+  },
+  {
+    "tipId": 40,
+    "tipCateg": "Sunlight",
+    "tipDesc": "Move your plants around to experiment and find the best spot for them based on their sunlight needs."
+  },
+  {
+    "tipId": 41,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "Use a liquid fertilizer for quick absorption if you need to see immediate results in plant growth."
+  },
+  {
+    "tipId": 42,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "Apply fertilizer to damp soil to prevent root burn."
+  },
+  {
+    "tipId": 43,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "For slow-growing plants, use a fertilizer with a lower nitrogen content."
+  },
+  {
+    "tipId": 44,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "Be careful with high-phosphorus fertilizers, as they can cause excess leaf growth at the expense of flowers."
+  },
+  {
+    "tipId": 45,
+    "tipCateg": "Fertilizing",
+    "tipDesc": "Ensure to flush the soil periodically with water to remove any built-up salts from fertilizers."
+  },
+  {
+    "tipId": 46,
+    "tipCateg": "Watering",
+    "tipDesc": "If your plant is wilting but the soil feels wet, it may be a sign of overwatering."
+  },
+  {
+    "tipId": 47,
+    "tipCateg": "Watering",
+    "tipDesc": "Increase humidity for tropical plants by misting the leaves or placing them in a humidity tray."
+  },
+  {
+    "tipId": 48,
+    "tipCateg": "Watering",
+    "tipDesc": "Adjust watering schedules based on the time of year—plants generally need more water during warmer months."
+  },
+  {
+    "tipId": 49,
+    "tipCateg": "Watering",
+    "tipDesc": "Consider using a self-watering system for low-maintenance plant care."
+  },
+  {
+    "tipId": 50,
+    "tipCateg": "Watering",
+    "tipDesc": "Regularly check for pests and diseases that can affect plant hydration needs."
+  }
+]

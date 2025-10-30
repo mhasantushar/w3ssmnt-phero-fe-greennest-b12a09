@@ -20,7 +20,8 @@ const HomePlantCard = ({ plant }) => {
           ))}
           <span className="ml-2 text-gray-600">{rating}</span>
         </div>
-        <p><hr className="border-base-300"/></p>
+        <hr className="border-base-300 mb-6"/>
+        
         <div>
           <p>Price: ${price}</p>
           <p>Only {stock} in stock!</p>

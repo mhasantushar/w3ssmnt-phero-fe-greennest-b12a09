@@ -1,13 +1,12 @@
 import React, { use } from "react";
 import { FaStar } from "react-icons/fa6";
-import { ImPlay3 } from "react-icons/im";
 import { Link } from "react-router";
 
 const allPlantsPromise = fetch("../plants-details.json").then((resp) =>
   resp.json()
 );
 
-const LPaneRatedHigh = () => {
+const LPanePopulars = () => {
   const allPlantsData = use(allPlantsPromise);
   // console.log(allPlantsData);
 
@@ -17,13 +16,13 @@ const LPaneRatedHigh = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold text-primary bg-secondary/40 mt-8 mb-4 mr-4 px-4 py-2 rounded-xl shadow-lg text-center">
+      <h2 className="text-2xl font-semibold text-primary bg-secondary/40 mt-8 mb-4 px-4 py-2 rounded-xl shadow-lg text-center">
         Popular
       </h2>
 
-      <section className="mr-4 flex flex-col gap-4 cursor-pointer">
+      <section className="flex flex-col gap-4 cursor-pointer">
         {popularPlants.map((plant) => (
-          <Link to={`/plant/${plant.plantId}`}>
+          <Link to={`/plant/${plant.plantId}`} key={plant.plantId}>
             <div className="text-center">
               <img
                 className="rounded-md shadow-lg mb-2"
@@ -47,4 +46,4 @@ const LPaneRatedHigh = () => {
   );
 };
 
-export default LPaneRatedHigh;
+export default LPanePopulars;

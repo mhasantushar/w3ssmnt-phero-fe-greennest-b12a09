@@ -1,17 +1,17 @@
 import React, { Suspense } from "react";
-import LPaneCategs from "./LPaneCategs";
 import { BarLoader } from "react-spinners";
-import LPanePopulars from "./LPanePopulars";
+import RPaneCaring from "./RPaneCaring";
+import RPaneExperts from "./RPaneExperts";
 
-const LPane = () => {
+const RPane = () => {
   return (
     <div>
       <Suspense fallback={<BarLoader />}>
-        <LPaneCategs />
-        <LPanePopulars />
+        <RPaneCaring />
+        <RPaneExperts />
       </Suspense>
     </div>
   );
 };
 
-export default LPane;
+export default RPane;

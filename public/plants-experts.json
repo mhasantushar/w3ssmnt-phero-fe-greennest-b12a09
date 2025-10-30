@@ -1,0 +1,86 @@
+[
+  {
+    "expertId": 1,
+    "name": "Alice Green",
+    "specialty": "General Indoor Plant Care",
+    "description": "Alice is a passionate indoor plant enthusiast with over 10 years of experience in maintaining healthy plants indoors. She specializes in creating balanced care routines for various plant types.",
+    "photo": "https://i.ibb.co/nMgQ7cDj/Alice-Green.jpg"
+  },
+  {
+    "expertId": 2,
+    "name": "John Root",
+    "specialty": "Soil and Fertilization",
+    "description": "John has a deep understanding of soil health and fertilization techniques. He helps plant owners select the best soil and fertilization routines to promote robust plant growth.",
+    "photo": "https://i.ibb.co/wZqnygw0/JohnRoot.jpg"
+  },
+  {
+    "expertId": 3,
+    "name": "Sophia Bloom",
+    "specialty": "Succulents and Cacti",
+    "description": "Sophia is a succulent and cactus specialist. With her expertise, she provides tips on watering, sunlight, and general care for these low-maintenance yet stunning plants.",
+    "photo": "https://i.ibb.co/rGDrCmkG/Sophia-Bloom.jpg"
+  },
+  {
+    "expertId": 4,
+    "name": "Daniel Moss",
+    "specialty": "Humidity and Air Quality",
+    "description": "Daniel is an expert in optimizing indoor humidity levels to promote the best environment for tropical and humidity-loving plants. He shares knowledge on creating an ideal air quality for plants.",
+    "photo": "https://i.ibb.co/bM9NYWJr/Daniel-Moss.jpg"
+  },
+  {
+    "expertId": 5,
+    "name": "Ella Fern",
+    "specialty": "Tropical Plants",
+    "description": "Ella focuses on caring for tropical plants, from ferns to orchids. She educates people on creating a warm and humid environment to ensure their plants thrive.",
+    "photo": "https://i.ibb.co/v4W4GWK7/EllaFern.jpg"
+  },
+  {
+    "expertId": 6,
+    "name": "Mike Evergreen",
+    "specialty": "Plant Disease Prevention",
+    "description": "Mike has extensive knowledge of plant diseases and prevention. He helps indoor plant owners identify and treat plant diseases before they spread.",
+    "photo": "https://i.ibb.co/5Wm7RsLs/Mike-Evergreen.jpg"
+  },
+  {
+    "expertId": 7,
+    "name": "Chloe Ivy",
+    "specialty": "Pest Control",
+    "description": "Chloe is a specialist in managing pests in indoor plants. She provides practical solutions for preventing and removing common pests like spider mites and aphids.",
+    "photo": "https://i.ibb.co/tMY14X9H/ChloeIvy.jpg"
+  },
+  {
+    "expertId": 8,
+    "name": "Liam Petal",
+    "specialty": "Plant Propagation",
+    "description": "Liam teaches plant propagation techniques, from cuttings to division. His tips help plant enthusiasts expand their collection without spending money on new plants.",
+    "photo": "https://i.ibb.co/zTtsR9sX/Liam-Petal.jpg"
+  },
+  {
+    "expertId": 9,
+    "name": "Amelia Leaf",
+    "specialty": "Air-Purifying Plants",
+    "description": "Amelia specializes in the care of air-purifying plants. She helps people select and maintain plants that clean the air while adding beauty to their homes.",
+    "photo": "https://i.ibb.co/5WyJnJzQ/Amelia-Leaf.jpg"
+  },
+  {
+    "expertId": 10,
+    "name": "Oliver Vine",
+    "specialty": "Plant Nutrition",
+    "description": "Oliver is an expert in plant nutrition, guiding plant owners on the best ways to feed their plants, including organic and chemical-based fertilizers.",
+    "photo": "https://i.ibb.co/M5j0fhWg/Oliver-Vine.jpg"
+  },
+  {
+    "expertId": 11,
+    "name": "Isabella Petunia",
+    "specialty": "Flowering Plants",
+    "description": "Isabella is an expert in caring for flowering plants. She offers advice on keeping indoor flowers blooming year-round with proper care and attention.",
+    "photo": "https://i.ibb.co/Kjwp9MpV/Isabella-Petunia.jpg"
+  },
+  {
+    "expertId": 12,
+    "name": "Noah Cedar",
+    "specialty": "Low-Light Plants",
+    "description": "Noah is a specialist in plants that thrive in low-light conditions. He helps plant owners choose the best plants for areas with minimal natural light.",
+    "photo": "https://i.ibb.co/qM4cqrrJ/Noah-Cedar.jpg"
+  }
+]
