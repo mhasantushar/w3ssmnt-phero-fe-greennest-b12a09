@@ -23,8 +23,9 @@ const RootLayout = () => {
 
         <section className="col-span-8">
           {pageState == "loading" ? <CircleForRootLayout /> : <Outlet />}
+
           <div className="mt-16">
-            <BookConsaltation/>
+            <BookConsaltation />
           </div>
         </section>
 

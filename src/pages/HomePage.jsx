@@ -13,10 +13,6 @@ const HomePage = () => {
       <section className="my-18">
         <HomeFeatured />
       </section>
-
-      {/* <section>
-        <BookConsaltation/>
-      </section> */}
     </div>
   );
 };

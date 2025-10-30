@@ -16,6 +16,25 @@ const BookConsaltation = () => {
       Need a Consultation?
       <input className="input" type="text" placeholder="Your Name" required />
       <input className="input" type="email" placeholder="Your Email" required />
+      <select
+        defaultValue="Select a consultant"
+        className="select text-accent/75"
+        required
+      >
+        <option disabled={true}>Select a consultant</option>
+        <option>Alice Green, General Indoor Plant Care</option>
+        <option>Amelia Leaf, Air-Purifying Plants</option>
+        <option>Chloe Ivy, Pest Control</option>
+        <option>Daniel Moss, Humidity and Air Quality</option>
+        <option>Ella Fern, Tropical Plants</option>
+        <option>Isabella Petunia, Flowering Plants</option>
+        <option>John Root, Soil and Fertilization</option>
+        <option>Liam Petal, Plant Propagation</option>
+        <option>Mike Evergreen, Plant Disease Prevention</option>
+        <option>Noah Cedar, Low-Light Plants</option>
+        <option>Oliver Vine, Plant Nutrition</option>
+        <option>Sophia Bloom, Succulents and Cacti</option>
+      </select>
       <button className="btn" type="submit">
         Book Now
       </button>
