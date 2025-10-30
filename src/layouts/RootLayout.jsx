@@ -5,6 +5,7 @@ import { Outlet, useNavigation } from "react-router";
 import LPane from "../compos/LPane";
 import RPane from "../compos/RPane";
 import CircleForRootLayout from "../compos/loaders/CircleForRootLayout";
+import BookConsaltation from "../compos/BookConsaltation";
 
 const RootLayout = () => {
   const { pageState } = useNavigation();
@@ -22,6 +23,9 @@ const RootLayout = () => {
 
         <section className="col-span-8">
           {pageState == "loading" ? <CircleForRootLayout /> : <Outlet />}
+          <div className="mt-16">
+            <BookConsaltation/>
+          </div>
         </section>
 
         <aside className="col-span-2 sticky top-10 h-fit">

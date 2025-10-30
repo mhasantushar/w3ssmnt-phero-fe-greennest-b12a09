@@ -27,3 +27,20 @@
 .home-categ-list.active {
   @apply btn-active
 }
+
+/* Custom color for the next and prev buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ABD373; /* Change to your desired color */
+  font-size: 24px; /* Adjust font size */
+  background: #F3F3F3; /* Optional: background color */
+  border-radius: 50%; /* Optional: make them circular */
+  padding: 10px; /* Optional: adjust the padding */
+}
+
+/* Optional: Hover effect */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #ff4500; /* Hover color */
+  background: rgba(255, 255, 255, 0.8);
+}

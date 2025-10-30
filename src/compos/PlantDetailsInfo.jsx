@@ -1,18 +1,10 @@
 import React from "react";
 import { FaStar } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router";
-import { toast } from "react-toastify";
+import BookConsaltation from "./BookConsaltation";
 
 const PlantDetails = ({ plant }) => {
   const navigate = useNavigate();
-
-  const handleConsultationReq = (e) => {
-    e.preventDefault();
-    toast.success(
-      "Session booked, please check your mailbox for details"
-    );
-    e.target.reset();
-  };
 
   return (
     <div>
@@ -41,10 +33,12 @@ const PlantDetails = ({ plant }) => {
               <p className="font-semibold">Price</p>
               <p>${plant.price}</p>
             </div>
+
             <div className="p-4 bg-secondary/40 rounded-full text-center">
               <p className="font-semibold">Stock</p>
               <p>{plant.stock} remaining</p>
             </div>
+
             <div className="p-4 bg-secondary/40 rounded-full text-center">
               <p className="font-semibold">Provider</p>
               <p>{plant.provider}</p>
@@ -57,32 +51,12 @@ const PlantDetails = ({ plant }) => {
             {Array.from({ length: plant.rating }).map((_, i) => (
               <FaStar key={i} />
             ))}
-            <span className="ml-2 text-gray-600">
-              {plant.rating} user rating point accumulated
+            <span className="ml-2 text-gray-600 font-semibold">
+              {plant.rating}
             </span>
           </div>
 
-          <form
-            onSubmit={handleConsultationReq}
-            className="font-semibold bg-secondary/40 px-4 py-2 my-8 rounded-xl flex gap-4 items-center justify-center"
-          >
-            Need a Consultation?
-            <input
-              className="input"
-              type="text"
-              placeholder="Your Name"
-              required
-            />
-            <input
-              className="input"
-              type="email"
-              placeholder="Your Email"
-              required
-            />
-            <button className="btn" type="submit">
-              Book Now
-            </button>
-          </form>
+          <BookConsaltation/>
         </section>
       </div>
 
@@ -92,11 +66,13 @@ const PlantDetails = ({ plant }) => {
             Show Plants in this Category
           </button>
         </Link>
+
         <Link to={"/category/0"}>
           <button className="btn btn-soft btn-secondary">
             Show All Plants
           </button>
         </Link>
+
         <button
           onClick={() => navigate(-1)}
           className="btn btn-soft btn-secondary"

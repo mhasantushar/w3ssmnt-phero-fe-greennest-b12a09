@@ -93,7 +93,7 @@ const RootHeader = () => {
               <img className="h-12" src={logoApp} alt="App Logo" />
             </Link>
             <Link to="/" className="btn btn-link text-3xl text-secondary">
-              greennest
+              <h1>greennest</h1>
             </Link>
           </div>
         </nav>
