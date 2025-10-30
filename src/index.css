@@ -23,3 +23,7 @@
   padding-left: 36px;
   padding-right:36px;
 }
+
+.home-categ-list.active {
+  @apply btn-active
+}

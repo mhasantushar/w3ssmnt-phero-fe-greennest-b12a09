@@ -14,11 +14,11 @@ const RootHeader = () => {
     useContext(AuthContext);
   // console.log(loggedInUser);
 
-  useEffect(()=>{
-    if (loggedInUser){
-      // console.log (loggedInUser.photoURL || '');
-    }
-  },[loggedInUser])
+  // useEffect(()=>{
+  //   if (loggedInUser){
+  //     console.log (loggedInUser.photoURL || '');
+  //   }
+  // },[loggedInUser])
 
   const handleUserSignOut = () => {
     doSignOut()
@@ -43,17 +43,19 @@ const RootHeader = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/plant">
+        <NavLink to="/plants">
           <RiPlantFill />
-          Plant
+          Plants
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/auth/profile">
-          <FaUserGear />
-          Profile
-        </NavLink>
-      </li>
+      {loggedInUser && (
+        <li>
+          <NavLink to="/auth/profile">
+            <FaUserGear />
+            Profile
+          </NavLink>
+        </li>
+      )}
     </>
   );
 
@@ -91,7 +93,7 @@ const RootHeader = () => {
               <img className="h-12" src={logoApp} alt="App Logo" />
             </Link>
             <Link to="/" className="btn btn-link text-3xl text-secondary">
-              greenest
+              greennest
             </Link>
           </div>
         </nav>

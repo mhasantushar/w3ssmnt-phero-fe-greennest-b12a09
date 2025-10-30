@@ -67,7 +67,7 @@ const AuthProfile = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen rounded-xl p-24">
+    <div className="hero bg-base-200 min-h-[calc(100dvh-285px)]  rounded-xl p-24">
       <div className="hero-content gap-12 flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-6xl font-bold">Update Profile!</h1>

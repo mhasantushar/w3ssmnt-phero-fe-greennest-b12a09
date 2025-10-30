@@ -2,11 +2,14 @@ import { createBrowserRouter } from "react-router";
 import HomePage from "../pages/HomePage";
 import RootLayout from "../layouts/RootLayout";
 import AuthProfile from "../pages/AuthProfile";
-import PlantDetails from "../pages/PlantDetails";
+import PlantDetailsWrap from "../pages/PlantDetailsWrap";
 import AuthLayout from "../layouts/AuthLayout";
 import AuthRegister from "../pages/AuthRegister";
 import AuthSignIn from "../pages/AuthSignIn";
 import PrivateRouter from "./PrivateRouter";
+import HomeCategPlants from "../pages/HomeCategPlants";
+import DotForDefaultRouter from "../compos/loaders/DotForDefRouter";
+import PlantsRedirect from "../pages/PlantsRedirect";
 
 const DefaultRouter = createBrowserRouter([
   {
@@ -18,10 +21,26 @@ const DefaultRouter = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/plant/",
-        element: <PlantDetails />,
+        path: "/category/:categId",
+        element: <HomeCategPlants />,
+        loader: () => fetch("../plants-details.json"),
+        hydrateFallbackElement: <DotForDefaultRouter />,
       },
     ],
+  },
+  {
+    path: "/plants",
+    element: <PlantsRedirect/>,
+  },
+  {
+    path: "/plant/:plantId",
+    element: (
+      <PrivateRouter>
+        <PlantDetailsWrap />
+      </PrivateRouter>
+    ),
+    loader: () => fetch("../plants-details.json"),
+    hydrateFallbackElement: <DotForDefaultRouter />,
   },
   {
     path: "/auth",
@@ -52,3 +71,4 @@ const DefaultRouter = createBrowserRouter([
 ]);
 
 export default DefaultRouter;
+

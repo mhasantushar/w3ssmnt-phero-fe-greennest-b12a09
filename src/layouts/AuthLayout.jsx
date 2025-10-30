@@ -10,7 +10,7 @@ const AuthLayout = () => {
         <RootHeader />
       </header>
 
-      <main className="w-11/12 mx-auto min-h-[calc(100dvh-285px)]">
+      <main className="w-11/12 mx-auto mb-12 min-h-[calc(100dvh-381px)]">
         <Outlet />
       </main>
 

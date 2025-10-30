@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import AuthContext from "./AuthContext";
 import { Navigate, useLocation } from "react-router";
-import ShowLoadingHash from "../compos/loaders/ShowLoadingHash";
+import HashForPrivRouter from "../compos/loaders/HashForPrivRouter";
 
 const PrivateRouter = ({ children }) => {
   const { loggedInUser, pageIsLoading } = useContext(AuthContext);
@@ -10,7 +10,7 @@ const PrivateRouter = ({ children }) => {
   // console.log(intendedLocation);
 
   if (pageIsLoading) {
-    return <ShowLoadingHash />;
+    return <HashForPrivRouter />;
   }
 
   if (!loggedInUser) {

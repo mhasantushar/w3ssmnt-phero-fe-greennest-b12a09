@@ -56,7 +56,7 @@ const AuthRegister = () => {
     doCreateUserWithEmailAndPassword(vMail, vPass)
       .then((userCredential) => {
         const user = userCredential.user;
-        toast.success(`Account created with email ${user.email}`);
+        toast.success("Account created successfully.");
         setLoggedInUser(user);
         e.target.reset();
         // console.log(loggedInUser);
@@ -90,8 +90,8 @@ const AuthRegister = () => {
         // console.log(loggedInUser);
       })
 
-      .catch((error) => {
-        toast.error(`User account wasn't created! ${error.message}`);
+      .catch((err) => {
+        toast.error(`User account wasn't created! ${err.message}`);
         setLoggedInUser(null);
       });
   };
@@ -112,23 +112,23 @@ const AuthRegister = () => {
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
 
-        toast.success(`User ${user.email} logged in successfully.`);
+        toast.success("User logged in successfully.");
         setLoggedInUser(user);
         navigate(intendedLocation);
       })
-      .catch((error) => {
+      .catch((err) => {
         // The email of the user's account used.
-        const email = error.customData.email;
+        // const email = err.customData.email;
 
         // The AuthCredential type that was used.
         // const credential = GoogleAuthProvider.credentialFromError(error);
-        toast.error(`Login with ${email} failed - ${error.message}.`);
+        toast.error(`Login failed! ${err.message}.`);
       });
     setPageIsLoading(false);
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen rounded-xl p-24">
+    <div className="hero bg-base-200 min-h-[calc(100dvh-285px)] rounded-xl p-24">
       <div className="hero-content gap-12 flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-6xl font-bold">Register now!</h1>

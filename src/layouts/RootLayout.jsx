@@ -1,17 +1,29 @@
 import React from "react";
 import RootHeader from "../compos/RootHeader";
 import RootFooter from "../compos/RootFooter";
-import { Outlet } from "react-router";
+import { Outlet, useNavigation } from "react-router";
+import LPane from "../compos/LPane";
+import CircleForRootLayout from "../compos/loaders/CircleForRootLayout";
 
 const RootLayout = () => {
+  const { pageState } = useNavigation();
+
   return (
     <div>
       <header className="w-11/12 mx-auto">
         <RootHeader />
       </header>
-      <main className="min-h-[calc(100dvh-285px)]">
-        <Outlet/>
+
+      <main className="w-11/12 mx-auto min-h-[calc(100dvh-381px)] grid grid-cols-12 my-12">
+        <aside className="col-span-2">
+          <LPane />
+        </aside>
+
+        <section className="col-span-10">
+          {pageState == "loading" ? <CircleForRootLayout /> : <Outlet />}
+        </section>
       </main>
+
       <footer>
         <RootFooter />
       </footer>

@@ -1,0 +1,18 @@
+[
+  {
+    "categId": 0,
+    "categName": "All Plants"
+  },
+  {
+    "categId": 1,
+    "categName": "Air Purifier"
+  },
+  {
+    "categId": 2,
+    "categName": "Insect Repellent"
+  },
+  {
+    "categId": 3,
+    "categName": "Decorative"
+  }
+]
